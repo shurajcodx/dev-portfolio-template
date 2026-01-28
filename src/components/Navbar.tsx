@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar: FC = () => {
   return (
@@ -8,27 +9,25 @@ const Navbar: FC = () => {
         <span>shuraj-shampang</span>
         <ul>
           <li>
-            <NavLink 
-              to="/" 
+            <NavLink
+              to="/"
               className={({ isActive }) => isActive ? "active" : ""}
             >
               _hello
             </NavLink>
           </li>
           <li>
-            <NavLink 
+            <NavLink
               to="/about"
-              onClick={(e) => e.preventDefault()}
-              className="cursor-not-allowed"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               _about-me
             </NavLink>
           </li>
           <li>
-            <NavLink 
+            <NavLink
               to="/projects"
-              onClick={(e) => e.preventDefault()}
-              className="cursor-not-allowed"
+              className={({ isActive }) => isActive ? "active" : ""}
             >
               _projects
             </NavLink>
@@ -36,13 +35,13 @@ const Navbar: FC = () => {
         </ul>
       </div>
       <div className="nav-right">
-        <NavLink 
-          to="/contact" 
-          onClick={(e) => e.preventDefault()}
-          className="cursor-not-allowed"
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => isActive ? "active" : ""}
         >
           _contact-me
         </NavLink>
+        <ThemeToggle />
       </div>
     </nav>
   );

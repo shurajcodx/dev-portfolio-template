@@ -1,11 +1,14 @@
 import { FC } from 'react';
-import { LoadingProps } from '../types/layout';
 
-const Loading: FC<LoadingProps> = ({ message = 'Loading...' }) => {
+const Loading: FC = () => {
   return (
     <div className="loading-container">
-      <div className="loading-spinner"></div>
-      <p>{message}</p>
+      <div className="loading-spinner">
+        <div className="spinner-ring"></div>
+        <div className="spinner-ring"></div>
+        <div className="spinner-ring"></div>
+      </div>
+      <p className="loading-text">Loading...</p>
     </div>
   );
 };

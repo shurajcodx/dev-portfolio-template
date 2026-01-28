@@ -1,16 +1,13 @@
 import { FC } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
-
-import CV from "../assets/surajrai_cv.pdf"; 
-import ProfileImage from "../assets/images/profile.jpeg"
-
+import { personalInfo } from "../config";
 
 const IDCard: FC = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = CV;
-    link.download = "Suraj_Rai_CV.pdf";
+    link.href = personalInfo.resumeUrl;
+    link.download = `${personalInfo.name.replace(/\s/g, '_')}_CV.pdf`;
     link.click();
   };
 
@@ -22,10 +19,10 @@ const IDCard: FC = () => {
       <div className="id-card-holder">
         <div className="id-card">
           <div className="header">
-            <img src={ProfileImage} alt="profile" />
+            <img src={personalInfo.avatar} alt={personalInfo.name} />
           </div>
-          <h2>Shuraj Shampang</h2>
-          <span>Software Engineer</span>
+          <h2>{personalInfo.name}</h2>
+          <span>{personalInfo.title}</span>
           <div className="cv-btn-container">
             <button onClick={handleDownload} className="download-cv-btn">
               <FontAwesomeIcon icon={faFileDownload} /> CV
