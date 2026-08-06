@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { motion } from 'framer-motion';
 import { Experience, Education } from '../types';
 
 interface TimelineProps {
@@ -9,15 +10,26 @@ interface TimelineProps {
 const Timeline: FC<TimelineProps> = ({ items, type }) => {
     const formatDate = (date: string) => {
         if (date === 'Present') return 'Present';
-        const [year, month] = date.split('-');
-        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        return month ? `${monthNames[parseInt(month) - 1]} ${year}` : year;
+        if (date.includes('-')) {
+            const [year, month] = date.split('-');
+            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return month ? `${monthNames[parseInt(month) - 1]} ${year}` : year;
+        }
+        return date;
     };
 
     return (
         <div className="timeline">
             {items.map((item, index) => (
-                <div key={item.id} className="timeline-item" data-index={index}>
+                <motion.div 
+                    key={item.id} 
+                    className="timeline-item" 
+                    data-index={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
                     <div className="timeline-marker" />
                     <div className="timeline-content">
                         <div className="timeline-header">
@@ -62,10 +74,11 @@ const Timeline: FC<TimelineProps> = ({ items, type }) => {
                             <p className="timeline-gpa">GPA: {(item as Education).gpa}</p>
                         )}
                     </div>
-                </div>
+                </motion.div>
             ))}
         </div>
     );
 };
 
 export default Timeline;
+

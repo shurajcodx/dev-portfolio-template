@@ -20,30 +20,14 @@ const ProjectsPage: FC = () => {
             ? projects
             : projects.filter((p) => p.category === selectedCategory);
 
-    const featuredProjects = projects.filter((p) => p.featured);
-
     return (
         <div className="main-content">
             <section className="projects-intro">
-                <h1>My Projects</h1>
+                <h1>My Open Source Projects</h1>
                 <p className="projects-subtitle">
-                    A collection of projects I've worked on, showcasing my skills and experience.
+                    A collection of open-source projects I've worked on, showcasing my skills and experience.
                 </p>
             </section>
-
-            {featuredProjects.length > 0 && selectedCategory === 'All' && (
-                <section className="featured-projects">
-                    <h2>
-                        <span className="const">const</span> featured = [
-                    </h2>
-                    <div className="projects-grid">
-                        {featuredProjects.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
-                        ))}
-                    </div>
-                    <h2>]</h2>
-                </section>
-            )}
 
             <section className="all-projects">
                 <div className="projects-header">
@@ -77,3 +61,4 @@ const ProjectsPage: FC = () => {
 };
 
 export default ProjectsPage;
+

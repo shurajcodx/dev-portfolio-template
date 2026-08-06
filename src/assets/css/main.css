@@ -175,12 +175,12 @@ nav {
 .intro h2 {
   color: var(--highlight-color);
   font-weight: 400;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--highlight-color);
   width: 0;
-  max-width: 26%;
+  max-width: fit-content;
   display: inline-block;
   animation: typewriter 2s ease-out forwards, blink 0.7s step-end infinite;
 }
@@ -292,11 +292,12 @@ footer {
   background-image: linear-gradient(to right,
       var(--accent-color),
       var(--highlight-color));
-  padding: 10px;
+  padding: 12px 10px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 1.5px 0px #b9b9b9;
-  height: 250px;
+  min-height: 260px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -321,44 +322,87 @@ footer {
 }
 
 .id-card h2 {
-  font-size: 20px;
-  margin: 5px;
+  font-size: 18px;
+  margin: 6px 0 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
   animation: fadeInScale 0.5s ease-out 1.7s backwards;
 }
 
+.verified-badge {
+  color: #64ffda;
+  font-size: 0.85rem;
+  filter: drop-shadow(0 0 4px rgba(100, 255, 218, 0.6));
+}
+
+.id-card-holo-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  z-index: 4;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.id-card.hovered .id-card-holo-shine {
+  opacity: 1;
+}
+
 .id-card span {
-  font-size: 14px;
+  font-size: 13px;
+  opacity: 0.9;
   animation: fadeInScale 0.5s ease-out 1.9s backwards;
 }
 
+.header {
+  margin-top: 4px;
+}
+
 .header img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center;
+  object-position: top center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   animation: fadeInScale 0.5s ease-out 1.5s backwards;
 }
 
 .cv-btn-container {
   display: flex;
-  margin-top: 20px;
-  width: 50%;
+  margin-top: 12px;
+  width: 85%;
+  justify-content: center;
 }
 
 .download-cv-btn {
   background-color: #0b485b;
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   animation: fadeInScale 0.5s ease-out 2.1s backwards;
 }
 
@@ -830,6 +874,68 @@ footer {
   transition: transform 0.3s ease;
 }
 
+.project-image-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(6, 182, 212, 0.2));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.fallback-code-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fallback-code-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.fallback-code-header .dot.red { background: #ff5f56; }
+.fallback-code-header .dot.yellow { background: #ffbd2e; }
+.fallback-code-header .dot.green { background: #27c93f; }
+
+.fallback-title {
+  font-family: var(--font-code, monospace);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-left: 6px;
+  opacity: 0.85;
+}
+
+.fallback-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.fallback-icon {
+  font-family: monospace;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--accent-color, #64ffda);
+}
+
+.fallback-body h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.fallback-tag {
+  font-size: 0.75rem;
+  color: var(--accent-color, #64ffda);
+  font-weight: 500;
+}
+
+
 .project-card:hover .project-image img {
   transform: scale(1.1);
 }
@@ -1156,7 +1262,6 @@ a.contact-value:hover {
   .intro h2 {
     width: 0;
     max-width: 100%;
-    min-width: 63%;
   }
 
   .contact-container {

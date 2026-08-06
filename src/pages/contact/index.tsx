@@ -39,7 +39,7 @@ const ContactPage: FC = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!validateForm()) {
@@ -49,24 +49,29 @@ const ContactPage: FC = () => {
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
-        // Simulate form submission (replace with actual API call)
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            const subject = formData.subject?.trim()
+                ? formData.subject
+                : `Portfolio Contact from ${formData.name}`;
 
-            // For now, just log the form data
-            console.log('Form submitted:', formData);
+            const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
+
+            const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoUrl;
 
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
 
             setTimeout(() => {
                 setSubmitStatus('idle');
-            }, 5000);
+            }, 6000);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setSubmitStatus('error');
             setTimeout(() => {
                 setSubmitStatus('idle');
-            }, 5000);
+            }, 6000);
         } finally {
             setIsSubmitting(false);
         }
@@ -208,21 +213,22 @@ const ContactPage: FC = () => {
                             className="submit-btn"
                             disabled={isSubmitting}
                         >
-                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                            {isSubmitting ? 'Opening Mail Client...' : 'Send Message'}
                         </button>
 
                         {submitStatus === 'success' && (
                             <div className="form-message success">
-                                Message sent successfully! I'll get back to you soon.
+                                Opening your email app to send the message to {personalInfo.email}.
                             </div>
                         )}
 
                         {submitStatus === 'error' && (
                             <div className="form-message error">
-                                Oops! Something went wrong. Please try again.
+                                Oops! Something went wrong. Please try emailing directly to {personalInfo.email}.
                             </div>
                         )}
                     </form>
+
                     <h2>{'}'}</h2>
                 </div>
             </div>

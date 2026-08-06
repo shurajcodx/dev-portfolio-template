@@ -4,14 +4,11 @@ import CV from '../assets/surajrai_cv.pdf';
 
 export const personalInfo: PersonalInfo = {
     name: 'Shuraj Shampang',
-    title: 'Software Engineer',
-    bio: `I'm a passionate software engineer with expertise in building modern web applications. 
-        I love creating elegant solutions to complex problems and am always eager to learn new technologies.
-        With a strong foundation in both frontend and backend development, I enjoy working on full-stack projects 
-        that make a real impact.`,
-    location: 'Nepal',
+    title: 'Senior Software Engineer',
+    bio: `Full-stack software engineer with 7+ years of experience designing and delivering scalable, high-performance web and mobile applications across healthcare, HR, logistics, and PaaS platforms. Deep expertise in React, React Native, Three.js, Node.js, Fastify, Spring Boot, and Laravel, with a strong track record in microservices architecture, REST API design, CI/CD automation, and cloud deployment (AWS, Docker). Currently leads architecture and technical direction for production platforms, mentors engineers, and improves API performance and release automation at scale.`,
+    location: 'Chitwan, Nepal',
     email: 'shuraj.shampang@gmail.com',
-    phone: '+977 9845320407',
+    phone: '+977 984 532 0407',
     avatar: ProfileImage,
     resumeUrl: CV,
 };
@@ -44,11 +41,26 @@ export const socialLinks: SocialLink[] = [
 ];
 
 export const seoConfig: SEOConfig = {
-    title: 'Shuraj Shampang - Software Engineer',
-    description: 'Portfolio of Shuraj Shampang, a passionate software engineer specializing in modern web development.',
-    keywords: ['Software Engineer', 'Web Developer', 'Full Stack Developer', 'React', 'TypeScript', 'Portfolio'],
-    author: 'Shuraj Shampang',
+    title: 'Shuraj Shampang - SeniorSoftware Engineer',
+    description: 'Portfolio of Suraj Rai (Shuraj Shampang), Senior Full-Stack Software Engineer specializing in React, Three.js, Node.js, Microservices, and Cloud Systems.',
+    keywords: [
+        'Suraj Rai',
+        'Shuraj Shampang',
+        'Senior Full-Stack Engineer',
+        'Staff Frontend Engineer',
+        'React',
+        'Three.js',
+        'TypeScript',
+        'Node.js',
+        'Fastify',
+        'Spring Boot',
+        'Microservices',
+        'Docker',
+        'Nepal'
+    ],
+    author: 'Suraj Rai',
     siteUrl: 'https://surajrai.name.np',
     image: ProfileImage,
     twitterHandle: '@shurajcodx',
 };
+
