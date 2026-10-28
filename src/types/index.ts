@@ -100,12 +100,50 @@ export interface ContactFormErrors {
     message?: string;
 }
 
-// Theme Types
+// Theme & Template Types
 export type Theme = 'light' | 'dark';
+
+export type TemplateId =
+    | 'neumorphism'
+    | 'claymorphism'
+    | 'neobrutalism'
+    | 'y2k'
+    | 'liquid-glass'
+    | 'skeuomorphism';
+
+export interface TemplateDefinition {
+    id: TemplateId;
+    number: number;
+    name: string;
+    shortName: string;
+    tagline: string;
+    description: string;
+    era: string;
+    features: string[];
+    previewColors: {
+        bg: string;
+        surface: string;
+        primary: string;
+        accent: string;
+        border: string;
+    };
+    threeColors: {
+        primary: string;
+        secondary: string;
+        gridCenter: number;
+        gridLines: number;
+        nodeColor: number;
+        lineColor: number;
+        spriteColors: string[];
+    };
+}
 
 export interface ThemeConfig {
     defaultTheme: Theme;
+    defaultTemplate: TemplateId;
+    rotateTemplateOnRefresh?: boolean;
     enableToggle: boolean;
+    enableTemplateSwitcher: boolean;
 }
 
 // SEO Types

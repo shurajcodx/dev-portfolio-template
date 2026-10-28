@@ -1,180 +1,91 @@
-# Developer Portfolio Template
+# Multi-Design Developer Portfolio Template (6-in-1 UI Engine)
 
-A modern, customizable developer portfolio template built with React, TypeScript, and Vite. Features a VS Code-inspired design with dark/light theme support and easy configuration.
+An open-source, customizable developer portfolio template built with **React 19**, **TypeScript**, **Three.js**, **Framer Motion**, and **Vite** — featuring **6 iconic design paradigms** that visitors can switch between live or developers can lock to their favorite style in a single config file.
 
 ![Portfolio Preview](public/preview.png)
 
-## ✨ Features
+## 🎨 6 Live Design Templates (Preview on `surajrai.name.np`)
 
-### Pages
-- **Home**: Animated introduction with code-style contact display and profile card
-- **About**: Professional bio, skills showcase, experience and education timeline
-- **Projects**: Filterable project gallery with featured projects section
-- **Contact**: Functional contact form with validation and social links
+Switch live between all 6 templates (each supporting **Dark** & **Light** modes) using the on-screen **Template Dock**, keyboard shortcuts (`1`–`6`), or direct URL parameters:
 
-### Components
-- **Theme Toggle**: Switch between dark and light modes with localStorage persistence
-- **Responsive Design**: Mobile-first design that works on all screen sizes
-- **Lazy Loading**: Optimized performance with code-splitting
-- **Animations**: Smooth transitions and micro-interactions
-- **TypeScript**: Full type safety throughout the codebase
+| # | Template | Aesthetic & Signature Details | Live Preview Link |
+| :- | :--- | :--- | :--- |
+| **1** | **Neumorphism** | Soft extruded matte surfaces, dual ambient shadows, recessed progress troughs, tactile push-buttons | [`?template=neumorphism`](https://surajrai.name.np/?template=neumorphism) |
+| **2** | **Claymorphism** | 3D inflated pastel/vivid clay cards, deep inner highlights, floating 3D clay spheres, spring physics | [`?template=claymorphism`](https://surajrai.name.np/?template=claymorphism) |
+| **3** | **Neo-Brutalism** | Raw 3px ink borders, hard 6px offset shadows, halftone dot matrix, mechanical hover shifts | [`?template=neobrutalism`](https://surajrai.name.np/?template=neobrutalism) |
+| **4** | **Retro Y2K** | Cyber-Millennium OS window chrome (`[_][□][×]`), gradient title bars, CRT scanlines, LED meters | [`?template=y2k`](https://surajrai.name.np/?template=y2k) |
+| **5** | **Liquid Glass** | Spatial computing frosted glass, specular 1px rim refraction, floating pill dock, aurora cosmos | [`?template=liquid-glass`](https://surajrai.name.np/?template=liquid-glass) |
+| **6** | **Skeuomorphism** | Brushed anodized metal headers, screw rivets, stitched leather trim, glowing recessed VFD readouts | [`?template=skeuomorphism`](https://surajrai.name.np/?template=skeuomorphism) |
 
-### Configuration
-- **Centralized Config**: All personal data in easy-to-edit config files
-- **Type-Safe**: TypeScript interfaces for all data structures
-- **Modular**: Reusable components for easy customization
+---
+
+## ✨ Key Features
+
+- **6 Handcrafted Design Systems × 2 Color Modes (12 Themes)**: Every template adapts typography, surface materiality, shadows, borders, skill bars, code windows, and 3D WebGL colors.
+- **Interactive Template Studio & Config Exporter**: Built-in modal allowing visitors and developers to preview templates, copy `src/config/templates.ts` snippets, and share direct template links.
+- **Template-Aware 3D WebGL Background**: Dynamic Three.js code sprites, perspective grid, and node constellation that automatically match the active template and pause when off-screen.
+- **Zero-Component-Edit Customization**: Update all personal info, skills, projects, experience, and default template inside `src/config/`.
+
+---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 16+ or Bun
-- pnpm, npm, or yarn
-
-### Installation
-
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/shurajcodx/dev-portfolio-template.git
 cd dev-portfolio-template
 
-# Install dependencies
+# 2. Install dependencies
 pnpm install
 
-# Start development server
+# 3. Start the development server
 pnpm run dev
 ```
 
-Visit `http://localhost:5173` to see your portfolio!
+Visit `http://localhost:5173` and press keys `1`–`6` (or use the bottom Template Dock) to test-drive all 6 templates!
 
-## 📝 Customization
+---
 
-All customization is done through configuration files in `src/config/`. No need to edit components!
+## ⚙️ How to Configure Your Portfolio (`src/config/`)
 
-### 1. Personal Information
+### 1. Choose Your Default Template (`src/config/templates.ts`)
 
-Edit `src/config/personal.ts`:
-- Name, title, bio
-- Contact information
-- Social media links
-- Profile photo and resume
+```ts
+export const themeConfig: ThemeConfig = {
+  defaultTheme: 'dark',           // 'dark' | 'light'
+  defaultTemplate: 'liquid-glass', // 'neumorphism' | 'claymorphism' | 'neobrutalism' | 'y2k' | 'liquid-glass' | 'skeuomorphism'
+  enableToggle: true,
+  enableTemplateSwitcher: true,   // Set to false if you want to lock your site to a single template
+};
+```
 
-### 2. Skills
+### 2. Personal Information (`src/config/personal.ts`)
+- Name, role title, executive bio, location, email, phone, profile photo, and resume PDF.
 
-Edit `src/config/skills.ts`:
-- Add your skills by category
-- Set proficiency levels (1-100)
+### 3. Skills (`src/config/skills.ts`)
+- Grouped skills by category (`Frontend`, `Backend`, `Database`, `DevOps`, `Tools`) with proficiency levels (`1–100`).
 
-### 3. Projects
+### 4. Projects (`src/config/projects.ts`)
+- Project cards with descriptions, tech stacks, categories, live demo URLs, and GitHub links.
 
-Edit `src/config/projects.ts`:
-- Add your projects with descriptions
-- Include tech stacks and categories
-- Add live demo and GitHub links
-- Mark featured projects
+### 5. Experience & Education (`src/config/experience.ts`)
+- Career timeline and academic background.
 
-### 4. Experience & Education
+---
 
-Edit `src/config/experience.ts`:
-- Add work experience
-- Add education history
-- Include dates, locations, and descriptions
-
-For detailed customization instructions, see [CUSTOMIZATION.md](CUSTOMIZATION.md).
-
-## 🎨 Theming
-
-Customize colors in `src/assets/css/variables.css` and `src/assets/css/theme.css`:
-- Background colors
-- Text colors
-- Accent colors
-- Highlight colors
-
-## 📦 Build
+## 📦 Build & Deploy
 
 ```bash
-# Build for production
+# Type-check and build for production
 pnpm run build
 
-# Preview production build
+# Preview production build locally
 pnpm run preview
+
+# Deploy to GitHub Pages
+pnpm run deploy
 ```
-
-## 🚀 Deployment
-
-### GitHub Pages
-
-1. Update `homepage` in `package.json`:
-   ```json
-   "homepage": "https://yourusername.github.io/repository-name/"
-   ```
-
-2. Deploy:
-   ```bash
-   pnpm run deploy
-   ```
-
-### Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/shurajcodx/dev-portfolio-template)
-
-### Netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/shurajcodx/dev-portfolio-template)
-
-## 📁 Project Structure
-
-```
-src/
-├── assets/          # Images, CSS, and static files
-├── components/      # Reusable React components
-├── config/          # Configuration files (customize here!)
-├── layout/          # Layout components
-├── pages/           # Page components
-├── routes/          # Route configuration
-└── types/           # TypeScript type definitions
-```
-
-## 🛠️ Tech Stack
-
-- **React 19** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **React Router** - Routing
-- **CSS3** - Styling with custom properties
-- **FontAwesome** - Icons
 
 ## 📄 License
 
-MIT License - feel free to use this template for your own portfolio!
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 👤 Author
-
-**Shuraj Shampang**
-- GitHub: [@shurajcodx](https://github.com/shurajcodx)
-- LinkedIn: [Shuraj Shampang](https://www.linkedin.com/in/shuraj-shampang-9ab60b2b5/)
-
-## ⭐ Show Your Support
-
-Give a ⭐️ if this project helped you!v-portfolio-template
-   ```  
-2. Install dependencies with pnpm:
-   ```sh
-   pnpm install
-   ```  
-   ```sh
-   pnpm run dev
-   ```  
-
-## Deployment 🚀
-You can deploy this portfolio on Vercel, Netlify, or any static hosting provider.
-
-## Contributing 🤝
-Feel free to fork, improve, and create pull requests! Contributions are welcome.
-
-## License 📜
-This project is open-source and available under the [MIT License](LICENSE).
-
+MIT License — free to use, customize, and deploy for your own developer portfolio!

@@ -1,77 +1,538 @@
+/* ==========================================================================
+   MULTI-TEMPLATE DESIGN SYSTEM TOKENS & PARADIGM OVERRIDES
+   1. Neumorphism   [data-template="neumorphism"]
+   2. Claymorphism  [data-template="claymorphism"]
+   3. Neo-Brutalism [data-template="neobrutalism"]
+   4. Retro Y2K     [data-template="y2k"]
+   5. Liquid Glass  [data-template="liquid-glass"]
+   6. Skeuomorphism [data-template="skeuomorphism"]
+   ========================================================================== */
+
 :root {
-  /* Dark Theme (Default) */
-  --bg-color: #011627;
-  --nav-bg: rgba(1, 22, 39, 0.95);
-  --text-color: #ffffff;
-  --secondary-text: #607b96;
-  --link-color: #607b96;
-  --intro-text: #e5e9f0;
-  --highlight-color: #4d5bce;
-  --accent-color: #43d9ad;
-  --nav-border: #1e2d3d;
-  --active-border: #fea55f;
-  --card-bg: rgba(30, 45, 61, 0.5);
-  --card-border: #1e2d3d;
-  --input-bg: #011221;
-  --input-border: #1e2d3d;
-  --button-bg: #1c2b3a;
-  --button-hover: #263b50;
-  --error-color: #e06c75;
-  --success-color: #43d9ad;
-}
+  /* MANDATORY (modern-web-guidance dark-mode): Adapt native UI to color scheme */
+  color-scheme: light dark;
 
-[data-theme='light'] {
-  /* Light Theme */
-  --bg-color: #f5f5f5;
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --text-color: #1a1a1a;
-  --secondary-text: #6b7280;
-  --link-color: #4b5563;
-  --intro-text: #374151;
-  --highlight-color: #3b82f6;
-  --accent-color: #10b981;
-  --nav-border: #e5e7eb;
-  --active-border: #f59e0b;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --card-border: #e5e7eb;
-  --input-bg: #ffffff;
-  --input-border: #d1d5db;
-  --button-bg: #f3f4f6;
-  --button-hover: #e5e7eb;
-  --error-color: #ef4444;
-  --success-color: #10b981;
-}
+  /* Safe OKLab / OKLCH gradient interpolation tokens (modern-web-guidance visual-effects) */
+  --in-oklab: ;
+  --in-oklch: ;
 
-/* Theme Transition */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Light theme specific overrides */
-[data-theme='light'] body {
-  background: linear-gradient(162deg, #e0e7ff, var(--bg-color), #dbeafe);
-}
-
-[data-theme='light'] .id-card {
-  background-image: linear-gradient(
-    to right,
-    var(--accent-color),
-    var(--highlight-color)
+  /* Physics-based easing tokens (modern-web-guidance physics-based-easing) */
+  --spring-easing: linear(
+    0, 0.016 0.5%, 0.06 1%, 0.226 2%, 1.116 5.4%, 1.375 6.6%, 1.527 7.7%,
+    1.565 8.2%, 1.585 8.8%, 1.581 9.3%, 1.559 9.8%, 1.458 10.9%, 0.937 14.3%,
+    0.784 15.5%, 0.693 16.6%, 0.67 17.1%, 0.657 17.7%, 0.671 18.7%, 0.729 19.8%,
+    1.042 23.3%, 1.13 24.5%, 1.182 25.6%, 1.201 26.7%, 1.192 27.7%, 1.156 28.8%,
+    0.977 32.2%, 0.925 33.4%, 0.894 34.5%, 0.882 35.6%, 0.887 36.6%, 0.907 37.7%,
+    1.045 42.4%, 1.069 44.5%, 1.059 46.3%, 0.979 50.9%, 0.96 53.4%, 0.966 55.3%,
+    1.013 59.9%, 1.024 62.3%, 0.986 71.2%, 1.008 79.9%, 0.995 88.9%, 1
   );
-  color: white;
+  --bounce-easing: linear(
+    0, 0.214 14.7%, 0.386 23.7%, 0.598 31.9%, 0.999 44.7%, 0.807 52.6%,
+    0.762 56%, 0.747 59.4%, 0.758 62.4%, 0.793 65.6%, 0.999 77.4%, 0.961 81.2%,
+    0.949 84.8%, 0.956 88%, 0.993 95.5%, 1
+  );
+
+  /* Default Fallback Tokens (Liquid Glass Dark) */
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-code: 'Fira Code', 'Space Mono', monospace;
+
+  --bg-color: #060b18;
+  --bg-gradient: radial-gradient(circle at 15% 15%, #111c38 0%, #060b18 55%, #040711 100%);
+  --nav-bg: rgba(8, 14, 30, 0.68);
+  --text-color: #f8fafc;
+  --secondary-text: #94a3b8;
+  --link-color: #cbd5e1;
+  --intro-text: #e2e8f0;
+  --highlight-color: #38bdf8;
+  --accent-color: #c084fc;
+  --nav-border: rgba(255, 255, 255, 0.14);
+  --active-border: #38bdf8;
+  --card-bg: rgba(255, 255, 255, 0.065);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --card-shadow: 0 24px 48px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  --card-hover-shadow: 0 28px 56px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  --inset-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.35);
+  --input-bg: rgba(5, 10, 24, 0.55);
+  --input-border: rgba(255, 255, 255, 0.18);
+  --button-bg: rgba(255, 255, 255, 0.09);
+  --button-hover: rgba(255, 255, 255, 0.16);
+  --error-color: #f87171;
+  --success-color: #34d399;
+
+  --radius-card: 22px;
+  --radius-btn: 14px;
+  --radius-pill: 999px;
+  --border-width: 1px;
+  --backdrop-blur: blur(26px) saturate(190%);
+
+  /* Scrollbar styling (paired with scrollbar-width: thin for macOS support) */
+  --scrollbar-thumb: rgba(148, 163, 184, 0.4);
+  --scrollbar-track: transparent;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  accent-color: var(--highlight-color);
 }
 
-[data-theme='light'] .id-card h2,
-[data-theme='light'] .id-card span {
-  color: white;
+@supports (background: linear-gradient(in oklab, white, black)) {
+  :root {
+    --in-oklab: in oklab;
+    --in-oklch: in oklch;
+  }
 }
 
-[data-theme='light'] .download-cv-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  backdrop-filter: blur(10px);
+[data-theme="dark"] {
+  color-scheme: dark;
 }
 
-[data-theme='light'] .download-cv-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   1. NEUMORPHISM (Soft Extruded Tactile UI)
+   ========================================================================== */
+[data-template="neumorphism"] {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  --bg-color: #21252b;
+  --bg-gradient: linear-gradient(145deg, #23272e, #1e2228);
+  --nav-bg: #21252b;
+  --text-color: #e6edf3;
+  --secondary-text: #8b949e;
+  --link-color: #9ca3af;
+  --intro-text: #d0d7de;
+  --highlight-color: #38bdf8;
+  --accent-color: #818cf8;
+  --nav-border: rgba(255, 255, 255, 0.04);
+  --active-border: #38bdf8;
+  --card-bg: #21252b;
+  --card-border: rgba(255, 255, 255, 0.03);
+  --card-shadow: 9px 9px 18px #15181c, -9px -9px 18px #2d323a;
+  --card-hover-shadow: 12px 12px 24px #13161a, -12px -12px 24px #2f353e;
+  --inset-shadow: inset 5px 5px 10px #15181c, inset -5px -5px 10px #2d323a;
+  --input-bg: #21252b;
+  --input-border: transparent;
+  --button-bg: #21252b;
+  --button-hover: #242930;
+  --radius-card: 22px;
+  --radius-btn: 14px;
+  --border-width: 1px;
+  --backdrop-blur: none;
+  --scrollbar-thumb: #3b424d;
+}
+
+[data-template="neumorphism"][data-theme="light"] {
+  --bg-color: #e0e5ec;
+  --bg-gradient: linear-gradient(145deg, #e6ebf2, #dadfe6);
+  --nav-bg: #e0e5ec;
+  --text-color: #1e293b;
+  --secondary-text: #64748b;
+  --link-color: #475569;
+  --intro-text: #334155;
+  --highlight-color: #2563eb;
+  --accent-color: #0d9488;
+  --nav-border: rgba(255, 255, 255, 0.5);
+  --active-border: #2563eb;
+  --card-bg: #e0e5ec;
+  --card-border: rgba(255, 255, 255, 0.45);
+  --card-shadow: 9px 9px 18px #a3b1c6, -9px -9px 18px #ffffff;
+  --card-hover-shadow: 12px 12px 24px #98a7bd, -12px -12px 24px #ffffff;
+  --inset-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+  --input-bg: #e0e5ec;
+  --input-border: transparent;
+  --button-bg: #e0e5ec;
+  --button-hover: #e6ebf2;
+  --scrollbar-thumb: #a3b1c6;
+}
+
+/* ==========================================================================
+   2. CLAYMORPHISM (3D Inflated Pastel/Vivid Clay)
+   ========================================================================== */
+[data-template="claymorphism"] {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  --bg-color: #1c1836;
+  --bg-gradient: radial-gradient(circle at 20% 20%, #2a2356 0%, #1c1836 60%, #141129 100%);
+  --nav-bg: rgba(43, 37, 82, 0.88);
+  --text-color: #ffffff;
+  --secondary-text: #c4b5fd;
+  --link-color: #ddd6fe;
+  --intro-text: #ede9fe;
+  --highlight-color: #ff6b9d;
+  --accent-color: #a78bfa;
+  --nav-border: rgba(255, 255, 255, 0.14);
+  --active-border: #ff6b9d;
+  --card-bg: #2a2352;
+  --card-border: rgba(255, 255, 255, 0.16);
+  --card-shadow:
+    0 20px 38px rgba(8, 5, 24, 0.58),
+    inset -8px -8px 16px rgba(13, 9, 34, 0.72),
+    inset 8px 8px 16px rgba(255, 255, 255, 0.18);
+  --card-hover-shadow:
+    0 26px 46px rgba(8, 5, 24, 0.68),
+    inset -8px -8px 18px rgba(13, 9, 34, 0.8),
+    inset 8px 8px 18px rgba(255, 255, 255, 0.25);
+  --inset-shadow:
+    inset 6px 6px 12px rgba(10, 7, 26, 0.75),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.12);
+  --input-bg: #211b42;
+  --input-border: rgba(255, 255, 255, 0.15);
+  --button-bg: #372f6b;
+  --button-hover: #443a82;
+  --radius-card: 30px;
+  --radius-btn: 999px;
+  --border-width: 2px;
+  --backdrop-blur: blur(16px);
+  --scrollbar-thumb: #ff6b9d;
+}
+
+[data-template="claymorphism"][data-theme="light"] {
+  --bg-color: #f3effe;
+  --bg-gradient: linear-gradient(135deg, #f5f0ff 0%, #e0f2fe 50%, #fce7f3 100%);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --text-color: #2e1065;
+  --secondary-text: #6d28d9;
+  --link-color: #5b21b6;
+  --intro-text: #4c1d95;
+  --highlight-color: #ec4899;
+  --accent-color: #7c3aed;
+  --nav-border: rgba(255, 255, 255, 0.9);
+  --active-border: #ec4899;
+  --card-bg: #ffffff;
+  --card-border: rgba(255, 255, 255, 0.95);
+  --card-shadow:
+    0 20px 40px rgba(124, 58, 237, 0.16),
+    inset -8px -8px 16px rgba(221, 214, 254, 0.7),
+    inset 8px 8px 16px rgba(255, 255, 255, 1);
+  --card-hover-shadow:
+    0 26px 48px rgba(236, 72, 153, 0.22),
+    inset -8px -8px 18px rgba(251, 207, 232, 0.65),
+    inset 8px 8px 18px rgba(255, 255, 255, 1);
+  --inset-shadow:
+    inset 5px 5px 10px rgba(196, 181, 253, 0.55),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.95);
+  --input-bg: #f8f5ff;
+  --input-border: #ddd6fe;
+  --button-bg: #f3e8ff;
+  --button-hover: #fae8ff;
+  --scrollbar-thumb: #ec4899;
+}
+
+/* ==========================================================================
+   3. NEO-BRUTALISM (Editorial Pop Print & Hard Ink Shadows)
+   ========================================================================== */
+[data-template="neobrutalism"] {
+  --font-sans: 'Space Grotesk', -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-code: 'Space Mono', monospace;
+
+  --bg-color: #111113;
+  --bg-gradient: none;
+  --nav-bg: #18181b;
+  --text-color: #fafafa;
+  --secondary-text: #d4d4d8;
+  --link-color: #fafafa;
+  --intro-text: #f4f4f5;
+  --highlight-color: #a3e635;
+  --accent-color: #facc15;
+  --nav-border: #fafafa;
+  --active-border: #a3e635;
+  --card-bg: #18181b;
+  --card-border: #fafafa;
+  --card-shadow: 6px 6px 0px #a3e635;
+  --card-hover-shadow: 9px 9px 0px #facc15;
+  --inset-shadow: none;
+  --input-bg: #09090b;
+  --input-border: #fafafa;
+  --button-bg: #27272a;
+  --button-hover: #a3e635;
+  --radius-card: 0px;
+  --radius-btn: 0px;
+  --border-width: 3px;
+  --backdrop-blur: none;
+  --scrollbar-thumb: #a3e635;
+}
+
+[data-template="neobrutalism"][data-theme="light"] {
+  --bg-color: #fffdf5;
+  --bg-gradient: none;
+  --nav-bg: #fde047;
+  --text-color: #09090b;
+  --secondary-text: #27272a;
+  --link-color: #09090b;
+  --intro-text: #18181b;
+  --highlight-color: #ff5722;
+  --accent-color: #2563eb;
+  --nav-border: #09090b;
+  --active-border: #09090b;
+  --card-bg: #ffffff;
+  --card-border: #09090b;
+  --card-shadow: 6px 6px 0px #09090b;
+  --card-hover-shadow: 9px 9px 0px #ff5722;
+  --inset-shadow: none;
+  --input-bg: #fef9c3;
+  --input-border: #09090b;
+  --button-bg: #a3e635;
+  --button-hover: #fde047;
+  --scrollbar-thumb: #09090b;
+}
+
+/* ==========================================================================
+   4. RETRO Y2K (Cyber-Millennium OS & Beveled Chrome Matrix)
+   ========================================================================== */
+[data-template="y2k"] {
+  --font-sans: 'Space Mono', monospace;
+  --font-display: 'VT323', 'Space Mono', monospace;
+  --font-code: 'Space Mono', monospace;
+
+  --bg-color: #050714;
+  --bg-gradient:
+    linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, #1a0b36 0%, #050714 75%);
+  --nav-bg: #0b132b;
+  --text-color: #e0fbfc;
+  --secondary-text: #72efdd;
+  --link-color: #00f0ff;
+  --intro-text: #caf0f8;
+  --highlight-color: #00f0ff;
+  --accent-color: #ff00aa;
+  --nav-border: #00f0ff;
+  --active-border: #ff00aa;
+  --card-bg: rgba(10, 18, 42, 0.94);
+  --card-border: #00f0ff;
+  --card-shadow:
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #ff00aa,
+    4px 4px 0px rgba(0, 240, 255, 0.35);
+  --card-hover-shadow:
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #00f0ff,
+    6px 6px 0px rgba(255, 0, 170, 0.55);
+  --inset-shadow: inset 2px 2px 0px #02040a, inset -2px -2px 0px #00f0ff;
+  --input-bg: #02040a;
+  --input-border: #00f0ff;
+  --button-bg: #162447;
+  --button-hover: #1f4068;
+  --radius-card: 2px;
+  --radius-btn: 2px;
+  --border-width: 2px;
+  --backdrop-blur: none;
+  --scrollbar-thumb: #00f0ff;
+}
+
+[data-template="y2k"][data-theme="light"] {
+  --bg-color: #008080;
+  --bg-gradient:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, #008080 0%, #005959 100%);
+  --nav-bg: #d4d0c8;
+  --text-color: #000000;
+  --secondary-text: #2b2b2b;
+  --link-color: #000080;
+  --intro-text: #111111;
+  --highlight-color: #000080;
+  --accent-color: #d0006f;
+  --nav-border: #404040;
+  --active-border: #d0006f;
+  --card-bg: #d4d0c8;
+  --card-border: #ffffff;
+  --card-shadow:
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #808080,
+    2px 2px 0px #000000;
+  --card-hover-shadow:
+    inset 2px 2px 0px #ffffff,
+    inset -2px -2px 0px #404040,
+    4px 4px 0px #000000;
+  --inset-shadow: inset 2px 2px 0px #808080, inset -2px -2px 0px #ffffff;
+  --input-bg: #ffffff;
+  --input-border: #808080;
+  --button-bg: #d4d0c8;
+  --button-hover: #e4e0d8;
+  --scrollbar-thumb: #000080;
+}
+
+/* ==========================================================================
+   5. LIQUID GLASS (Spatial Computing Specular Glass)
+   ========================================================================== */
+[data-template="liquid-glass"] {
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-code: 'Fira Code', monospace;
+
+  --bg-color: #050914;
+  --bg-gradient: radial-gradient(circle at 15% 15%, #111c38 0%, #050914 55%, #03060e 100%);
+  --nav-bg: rgba(12, 20, 40, 0.55);
+  --text-color: #f8fafc;
+  --secondary-text: #94a3b8;
+  --link-color: #e2e8f0;
+  --intro-text: #cbd5e1;
+  --highlight-color: #38bdf8;
+  --accent-color: #c084fc;
+  --nav-border: rgba(255, 255, 255, 0.16);
+  --active-border: #38bdf8;
+  --card-bg: rgba(255, 255, 255, 0.065);
+  --card-border: rgba(255, 255, 255, 0.22);
+  --card-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.08);
+  --card-hover-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(56, 189, 248, 0.18),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.55);
+  --inset-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.38);
+  --input-bg: rgba(15, 23, 42, 0.45);
+  --input-border: rgba(255, 255, 255, 0.2);
+  --button-bg: rgba(255, 255, 255, 0.1);
+  --button-hover: rgba(255, 255, 255, 0.18);
+  --radius-card: 24px;
+  --radius-btn: 999px;
+  --border-width: 1px;
+  --backdrop-blur: blur(28px) saturate(190%);
+  --scrollbar-thumb: rgba(56, 189, 248, 0.45);
+}
+
+[data-template="liquid-glass"][data-theme="light"] {
+  --bg-color: #eaf2ff;
+  --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #eef2ff 50%, #fae8ff 100%);
+  --nav-bg: rgba(255, 255, 255, 0.62);
+  --text-color: #0f172a;
+  --secondary-text: #475569;
+  --link-color: #1e293b;
+  --intro-text: #334155;
+  --highlight-color: #0284c7;
+  --accent-color: #9333ea;
+  --nav-border: rgba(255, 255, 255, 0.85);
+  --active-border: #0284c7;
+  --card-bg: rgba(255, 255, 255, 0.58);
+  --card-border: rgba(255, 255, 255, 0.88);
+  --card-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.08),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.5);
+  --card-hover-shadow:
+    0 28px 55px rgba(2, 132, 199, 0.16),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  --inset-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.06);
+  --input-bg: rgba(255, 255, 255, 0.68);
+  --input-border: rgba(255, 255, 255, 0.9);
+  --button-bg: rgba(255, 255, 255, 0.72);
+  --button-hover: rgba(255, 255, 255, 0.92);
+  --scrollbar-thumb: rgba(2, 132, 199, 0.45);
+}
+
+/* ==========================================================================
+   6. SKEUOMORPHISM (Tactile Studio Hardware: Brushed Metal, Leather & VFD)
+   ========================================================================== */
+[data-template="skeuomorphism"] {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-code: 'Fira Code', monospace;
+
+  --bg-color: #161412;
+  --bg-gradient:
+    radial-gradient(circle at 50% 0%, #26221e 0%, #161412 75%);
+  --nav-bg: linear-gradient(180deg, #302b27 0%, #1d1a17 100%);
+  --text-color: #f5ebe1;
+  --secondary-text: #b8aa9b;
+  --link-color: #e6d7c3;
+  --intro-text: #dfd3c3;
+  --highlight-color: #f59e0b;
+  --accent-color: #10b981;
+  --nav-border: #443c35;
+  --active-border: #f59e0b;
+  --card-bg: linear-gradient(180deg, #2b2623 0%, #1e1b18 100%);
+  --card-border: #473e37;
+  --card-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.65);
+  --card-hover-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.85),
+    inset 0 1px 0 rgba(245, 158, 11, 0.35),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.75);
+  --inset-shadow:
+    inset 0 3px 8px rgba(0, 0, 0, 0.85),
+    0 1px 0 rgba(255, 255, 255, 0.1);
+  --input-bg: #0c120e;
+  --input-border: #3a332c;
+  --button-bg: linear-gradient(180deg, #3b352f 0%, #24201c 100%);
+  --button-hover: linear-gradient(180deg, #474039 0%, #2c2722 100%);
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --border-width: 1px;
+  --backdrop-blur: none;
+  --scrollbar-thumb: #d97706;
+}
+
+[data-template="skeuomorphism"][data-theme="light"] {
+  --bg-color: #ddd6cc;
+  --bg-gradient:
+    radial-gradient(circle at 50% 0%, #eee9e0 0%, #d5cdc0 100%);
+  --nav-bg: linear-gradient(180deg, #f5f2ec 0%, #ded8ce 100%);
+  --text-color: #29221c;
+  --secondary-text: #615346;
+  --link-color: #3d332a;
+  --intro-text: #473c32;
+  --highlight-color: #b45309;
+  --accent-color: #047857;
+  --nav-border: #b8afa3;
+  --active-border: #b45309;
+  --card-bg: linear-gradient(180deg, #faf8f5 0%, #eae4da 100%);
+  --card-border: #c5bcb0;
+  --card-shadow:
+    0 10px 22px rgba(45, 35, 25, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.08);
+  --card-hover-shadow:
+    0 14px 28px rgba(45, 35, 25, 0.25),
+    inset 0 2px 0 rgba(255, 255, 255, 1);
+  --inset-shadow:
+    inset 0 3px 7px rgba(0, 0, 0, 0.22),
+    0 1px 0 rgba(255, 255, 255, 0.85);
+  --input-bg: #101914;
+  --input-border: #8c8275;
+  --button-bg: linear-gradient(180deg, #fdfcfb 0%, #e2dcd1 100%);
+  --button-hover: linear-gradient(180deg, #ffffff 0%, #ebe5db 100%);
+  --scrollbar-thumb: #b45309;
+}
+
+/* ==========================================================================
+   VIEW TRANSITIONS & REDUCED MOTION (modern-web-guidance)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Legacy WebKit scrollbar fallback when scrollbar-color is unsupported */
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
 }

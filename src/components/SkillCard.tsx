@@ -9,7 +9,7 @@ interface SkillCardProps {
 const SkillCard: FC<SkillCardProps> = ({ skill }) => {
     return (
         <motion.div 
-            className="skill-card"
+            className="skill-card surface-card"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

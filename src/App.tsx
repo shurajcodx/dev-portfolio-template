@@ -1,12 +1,15 @@
-import { BrowserRouter as Router } from 'react-router'
-import AppRoutes from './routes'
+import { BrowserRouter as Router } from 'react-router';
+import { TemplateProvider } from './context/TemplateContext';
+import AppRoutes from './routes';
 
 function App() {
   return (
-   <Router>
-      <AppRoutes />
-   </Router>
-  )
+    <TemplateProvider>
+      <Router>
+        <AppRoutes />
+      </Router>
+    </TemplateProvider>
+  );
 }
 
-export default App
+export default App;

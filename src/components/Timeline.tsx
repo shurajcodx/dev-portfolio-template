@@ -31,7 +31,7 @@ const Timeline: FC<TimelineProps> = ({ items, type }) => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                     <div className="timeline-marker" />
-                    <div className="timeline-content">
+                    <div className="timeline-content surface-card">
                         <div className="timeline-header">
                             {type === 'experience' ? (
                                 <>
