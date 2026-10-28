@@ -90,7 +90,13 @@ const IDCard: FC = () => {
 
                     <div className="header">
                         <div className="avatar-ring">
-                            <img src={personalInfo.avatar} alt={personalInfo.name} />
+                            <img
+                                src={personalInfo.avatar}
+                                alt={`${personalInfo.name} (Suraj Rai) — ${personalInfo.title}`}
+                                width={88}
+                                height={88}
+                                fetchPriority="high"
+                            />
                             <span className="status-online-dot" title="Available for hire" />
                         </div>
                     </div>
@@ -113,7 +119,7 @@ const IDCard: FC = () => {
                     <div className="id-meta-grid">
                         <div className="id-meta-cell">
                             <small>EXPERIENCE</small>
-                            <strong>7+ YRS</strong>
+                            <strong>8+ YRS</strong>
                         </div>
                         <div className="id-meta-cell">
                             <small>STYLE</small>

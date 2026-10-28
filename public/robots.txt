@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://surajrai.name.np/sitemap.xml
+Host: https://surajrai.name.np
+

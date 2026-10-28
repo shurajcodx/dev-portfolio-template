@@ -23,11 +23,12 @@ const ProjectsPage: FC = () => {
     return (
         <div className="main-content">
             <section className="projects-intro surface-card">
-                <span className="section-eyebrow">// 03. OPEN SOURCE &amp; PRODUCTION</span>
-                <h1>My Open Source Projects</h1>
+                <span className="section-eyebrow">// 03. PRODUCTION PLATFORMS &amp; OPEN SOURCE</span>
+                <h1>Selected &amp; Open-Source Projects</h1>
                 <p className="projects-subtitle">
-                    A curated collection of open-source libraries, developer tools, and
-                    web applications showcasing modern architecture and craft.
+                    Production platforms in PaaS, AI-powered Digital Asset Management,
+                    HL7 FHIR Healthcare, and Real-Time Logistics — alongside open-source
+                    libraries and developer tools.
                 </p>
             </section>
 

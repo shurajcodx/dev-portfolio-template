@@ -2,37 +2,173 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Shuraj Shampang - Software Engineer | Portfolio</title>
-    <meta name="title" content="Shuraj Shampang - Software Engineer | Portfolio" />
-    <meta name="description" content="Portfolio of Shuraj Shampang, a passionate software engineer specializing in modern web development with React, TypeScript, Node.js, and more." />
-    <meta name="keywords" content="Software Engineer, Web Developer, Full Stack Developer, React, TypeScript, Node.js, Portfolio, Shuraj Shampang" />
-    <meta name="author" content="Shuraj Shampang" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://surajrai.name.np/" />
-    <meta property="og:title" content="Shuraj Shampang - Software Engineer | Portfolio" />
-    <meta property="og:description" content="Portfolio of Shuraj Shampang, a passionate software engineer specializing in modern web development." />
-    <meta property="og:image" content="https://surajrai.name.np/og-image.jpg" />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://surajrai.name.np/" />
-    <meta property="twitter:title" content="Shuraj Shampang - Software Engineer | Portfolio" />
-    <meta property="twitter:description" content="Portfolio of Shuraj Shampang, a passionate software engineer specializing in modern web development." />
-    <meta property="twitter:image" content="https://surajrai.name.np/og-image.jpg" />
-    
-    <!-- Additional Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#011627" />
+    <meta name="theme-color" content="#060b18" />
+
+    <!-- Icons & Manifest -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead</title>
+    <meta
+      name="title"
+      content="Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead"
+    />
+    <meta
+      name="description"
+      content="Official portfolio of Suraj Rai (Shuraj Shampang), Senior Full-Stack Engineer and Tech Lead with 8+ years building production web, mobile, and AI-enabled platforms in healthcare (HL7 FHIR), logistics, digital asset management, and PaaS using React, TypeScript, Node.js, Spring Boot, Symfony, Elasticsearch, and MCP servers."
+    />
+    <meta
+      name="keywords"
+      content="Suraj Rai, Shuraj Shampang, shurajcodx, Senior Full-Stack Engineer, Tech Lead, Software Engineer Nepal, React Developer, TypeScript, Next.js, Node.js, Fastify, Spring Boot, Symfony, Laravel, Elasticsearch, AI Integration, MCP Server, HL7 FHIR, AWS, Docker, Dzango Technologies, Chitwan, Kathmandu"
+    />
+    <meta name="author" content="Suraj Rai (Shuraj Shampang)" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <link rel="canonical" href="https://surajrai.name.np/" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://surajrai.name.np/" />
+    <meta
+      property="og:title"
+      content="Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead"
+    />
+    <meta
+      property="og:description"
+      content="Senior Full-Stack Engineer and Tech Lead with 8+ years building production web, mobile, and AI-enabled platforms across healthcare, logistics, digital asset management, and PaaS."
+    />
+    <meta property="og:image" content="https://surajrai.name.np/preview.png" />
+    <meta
+      property="og:image:alt"
+      content="Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead Portfolio"
+    />
+    <meta property="profile:first_name" content="Suraj" />
+    <meta property="profile:last_name" content="Rai" />
+    <meta property="profile:username" content="shurajcodx" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@shurajcodx" />
+    <meta name="twitter:creator" content="@shurajcodx" />
+    <meta name="twitter:url" content="https://surajrai.name.np/" />
+    <meta
+      name="twitter:title"
+      content="Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead"
+    />
+    <meta
+      name="twitter:description"
+      content="Senior Full-Stack Engineer & Tech Lead (8+ yrs) specializing in React, TypeScript, Node.js, Fastify, Spring Boot, Symfony, Elasticsearch, and AI/MCP platforms."
+    />
+    <meta name="twitter:image" content="https://surajrai.name.np/preview.png" />
+
+    <!-- Structured Data (JSON-LD) for Google Rich Results & Knowledge Graph -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://surajrai.name.np/#person",
+            "name": "Suraj Rai",
+            "alternateName": ["Shuraj Shampang", "shurajcodx"],
+            "jobTitle": "Senior Full-Stack Engineer | Tech Lead",
+            "description": "Senior Full-Stack Engineer and Tech Lead with 8+ years building and delivering production web, mobile and AI-enabled platforms in healthcare, logistics, digital asset management and platform-as-a-service.",
+            "url": "https://surajrai.name.np/",
+            "image": "https://surajrai.name.np/preview.png",
+            "email": "mailto:shuraj.shampang@gmail.com",
+            "telephone": "+977-9845320407",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chitwan",
+              "addressCountry": "NP"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Dzango Technologies"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Sikkim Manipal University"
+            },
+            "knowsAbout": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Vue",
+              "React Native",
+              "Flutter",
+              "Native Android",
+              "Node.js",
+              "Express",
+              "Fastify",
+              "Spring Boot",
+              "Symfony",
+              "Laravel",
+              "GraphQL",
+              "WebSocket",
+              "Kafka",
+              "AI Integration",
+              "Semantic Search",
+              "MCP Server Development",
+              "Elasticsearch",
+              "PostgreSQL",
+              "MariaDB",
+              "MongoDB",
+              "Redis",
+              "AWS",
+              "Docker",
+              "Jenkins CI/CD",
+              "Grafana",
+              "Prometheus",
+              "HL7 FHIR"
+            ],
+            "sameAs": [
+              "https://github.com/shurajcodx",
+              "https://www.linkedin.com/in/shuraj-shampang-9ab602b5",
+              "https://www.instagram.com/shurajcodx_/",
+              "https://www.facebook.com/shurajcodx"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://surajrai.name.np/#website",
+            "url": "https://surajrai.name.np/",
+            "name": "Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead",
+            "description": "Official engineering portfolio, production case studies, and open-source projects of Suraj Rai (Shuraj Shampang).",
+            "publisher": {
+              "@id": "https://surajrai.name.np/#person"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://surajrai.name.np/#profilepage",
+            "url": "https://surajrai.name.np/",
+            "name": "Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead Portfolio",
+            "isPartOf": {
+              "@id": "https://surajrai.name.np/#website"
+            },
+            "about": {
+              "@id": "https://surajrai.name.np/#person"
+            },
+            "mainEntity": {
+              "@id": "https://surajrai.name.np/#person"
+            }
+          }
+        ]
+      }
+    </script>
 
     <!-- Template Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

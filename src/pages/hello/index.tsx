@@ -8,10 +8,10 @@ const ThreeBackground = lazy(() => import('../../components/ThreeBackground'));
 
 const HelloPage: FC = () => {
     const quickMetrics = [
-        { value: '7+ Yrs', label: 'Production Experience' },
-        { value: '~30%', label: 'API Latency Reduced' },
-        { value: '~70%', label: 'Faster CI/CD Deploys' },
-        { value: '15+', label: 'Systems Delivered' },
+        { value: '8+ Yrs', label: 'Production Experience' },
+        { value: '~1M', label: '0-Downtime ES Migration' },
+        { value: '~70%', label: 'Deploy Effort Reduced' },
+        { value: '~30%', label: 'End-to-End Latency Cut' },
     ];
 
     return (
@@ -33,9 +33,11 @@ const HelloPage: FC = () => {
                         <h1>{personalInfo.name}</h1>
                         <h2>&gt; {personalInfo.title}</h2>
                         <p className="intro-summary">
-                            Architecting resilient microservices, cloud-native platforms, and
-                            high-craft interactive web experiences with React, TypeScript,
-                            Three.js, Node.js, Fastify, and Spring Boot.
+                            Senior Full-Stack Engineer and Tech Lead with 8+ years building and
+                            delivering production web, mobile, and AI-enabled platforms in
+                            healthcare, logistics, digital asset management, and PaaS using
+                            React, TypeScript, Node.js, Spring Boot, Symfony, Elasticsearch,
+                            and MCP servers.
                         </p>
                     </motion.section>
 

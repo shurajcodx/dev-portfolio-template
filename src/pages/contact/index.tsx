@@ -224,6 +224,7 @@ const ContactPage: FC = () => {
                             <label htmlFor="email">Email *</label>
                             <input
                                 type="email"
+                                inputMode="email"
                                 id="email"
                                 name="email"
                                 autoComplete="email"

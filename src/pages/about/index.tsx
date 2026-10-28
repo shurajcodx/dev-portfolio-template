@@ -28,18 +28,18 @@ const AboutPage: FC = () => {
     const pillars = [
         {
             icon: faCubes,
-            title: 'Distributed Systems & APIs',
-            desc: 'Designing fault-tolerant microservices, event-driven pipelines, and high-throughput REST/GraphQL APIs.',
+            title: 'Architecture & Technical Leadership',
+            desc: 'Leading concurrent products across healthcare (HL7 FHIR), HR, DAM, and PaaS — owning RFCs/ADRs, shared design systems, and engineering mentorship.',
         },
         {
             icon: faServer,
-            title: 'Full-Stack & Spatial Web',
-            desc: 'Crafting responsive React, TypeScript, and Three.js interfaces paired with Node.js, Fastify, and Spring Boot.',
+            title: 'AI Pipelines, MCP & Search at Scale',
+            desc: 'Building multi-model LLM pipelines, semantic search, Claude MCP servers, and zero-downtime Elasticsearch migrations (~1M records).',
         },
         {
             icon: faCloudBolt,
-            title: 'Cloud & Release Engineering',
-            desc: 'Automating Docker/AWS deployments, CI/CD workflows, and Grafana/Prometheus observability at scale.',
+            title: 'Performance, Cloud & CI/CD',
+            desc: 'Cutting manual deployment effort by ~70% and end-to-end latency by ~30% with AWS, Docker, Jenkins CI/CD, Redis, and Grafana/Prometheus.',
         },
     ];
 

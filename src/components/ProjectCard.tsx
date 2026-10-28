@@ -47,6 +47,8 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
                     <img
                         src={project.image}
                         alt={project.title}
+                        width={640}
+                        height={360}
                         loading="lazy"
                         onError={() => setImgError(true)}
                     />
