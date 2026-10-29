@@ -52,7 +52,12 @@ const SEO: FC = () => {
                 ? pathname.slice(0, -1)
                 : pathname;
 
-        const meta = ROUTE_SEO_MAP[normalizedPath] || ROUTE_SEO_MAP['/'];
+        const meta = ROUTE_SEO_MAP[normalizedPath] || {
+            title: 'Page Not Found (404) — Suraj Rai | Top Rated Software Engineer',
+            description:
+                'The requested page could not be found. Return to the portfolio homepage or explore selected projects and architecture.',
+            path: normalizedPath,
+        };
         const canonicalUrl = `${SITE_URL}${meta.path === '/' ? '/' : meta.path}`;
 
         document.title = meta.title;
