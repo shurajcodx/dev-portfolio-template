@@ -3,7 +3,7 @@ import { TemplateDefinition, ThemeConfig } from '../types';
 export const themeConfig: ThemeConfig = {
     defaultTheme: 'dark',
     defaultTemplate: 'neumorphism',
-    rotateTemplateOnRefresh: true,
+    rotateTemplateOnRefresh: false,
     enableToggle: true,
     enableTemplateSwitcher: true,
 };
