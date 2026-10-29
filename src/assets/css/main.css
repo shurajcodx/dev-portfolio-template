@@ -2540,3 +2540,121 @@ footer {
   height: 24px;
   background: rgba(245, 158, 11, 0.2);
 }
+
+/* ==========================================================================
+   404 Page (Not Found) Styles across all 6 Design Paradigms
+   ========================================================================== */
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 160px);
+  padding: 2rem 1.5rem;
+}
+
+.not-found-card {
+  width: 100%;
+  max-width: 680px;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border-radius: var(--card-radius);
+  background: var(--card-bg);
+  border: var(--border-width) solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--card-backdrop);
+}
+
+.not-found-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--highlight-color);
+  margin-bottom: 0.85rem;
+}
+
+.not-found-title {
+  font-size: clamp(3.75rem, 9vw, 6.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.4rem;
+  color: var(--text-color);
+  font-family: var(--font-mono);
+}
+
+.not-found-subtitle {
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+
+.not-found-message {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--secondary-text);
+  margin-bottom: 1.5rem;
+  max-width: 560px;
+}
+
+.not-found-code-readout {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.85rem;
+  border-radius: calc(var(--card-radius) * 0.7);
+  background: rgba(0, 0, 0, 0.28);
+  border: var(--border-width) solid var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+}
+
+.not-found-code-readout .code-line {
+  display: flex;
+  gap: 1.1rem;
+  line-height: 1.7;
+}
+
+.not-found-code-readout .line-num {
+  color: var(--secondary-text);
+  opacity: 0.4;
+  user-select: none;
+  min-width: 1.2rem;
+  text-align: right;
+}
+
+.not-found-code-readout .code-statement {
+  overflow-x: auto;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+/* Template-specific 404 enhancements */
+[data-template="y2k"] .not-found-title {
+  font-family: 'VT323', monospace;
+  font-size: clamp(5rem, 12vw, 8rem);
+  text-shadow: 0 0 16px var(--highlight-color);
+}
+
+[data-template="neobrutalism"] .not-found-card {
+  box-shadow: 8px 8px 0px #09090b;
+  border: 3px solid #09090b;
+}
+
+[data-template="skeuomorphism"] .not-found-code-readout {
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+[data-template="claymorphism"] .not-found-card {
+  border-radius: 28px;
+}
+
