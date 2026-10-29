@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: var(--cursor-default, auto);
 }
 
 body {
@@ -20,6 +21,42 @@ body {
   background-attachment: fixed;
   overflow-x: hidden;
   transition: background-color 0.35s ease, color 0.35s ease;
+  cursor: var(--cursor-default, auto);
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+summary,
+.filter-btn,
+.template-fab-trigger,
+.template-menu-item,
+.download-cv-btn,
+.btn-primary-action,
+.btn-secondary-action,
+.btn-ghost-action,
+.card-action-link,
+.active-template-pill,
+.theme-toggle,
+.nav-brand,
+.social-link,
+.contact-copy-btn,
+.code-copy-inline {
+  cursor: var(--cursor-pointer, pointer);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  cursor: text;
+  caret-color: var(--highlight-color);
+}
+
+::selection {
+  background-color: var(--highlight-color);
+  color: var(--bg-color);
 }
 
 /* ========== APP SHELL & AMBIENT ATMOSPHERE ========== */
@@ -2300,4 +2337,206 @@ footer {
     right: 1rem;
     bottom: 3.4rem;
   }
+}
+
+/* ========== THEME-AWARE INTERACTIVE CURSOR FOLLOWER ========== */
+.theme-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.theme-cursor-follower.is-visible {
+  opacity: 1;
+}
+
+.theme-cursor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: width 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              height 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.22s ease;
+}
+
+/* 1. Neumorphism Cursor Follower */
+.template-cursor-neumorphism .theme-cursor-ring {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), -3px -3px 6px rgba(255, 255, 255, 0.08);
+}
+.template-cursor-neumorphism.theme-cursor-light .theme-cursor-ring {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 3px 3px 6px #a3b1c6, -3px -3px 6px #ffffff;
+}
+.template-cursor-neumorphism.is-hovering .theme-cursor-ring {
+  width: 44px;
+  height: 44px;
+  border-color: var(--highlight-color);
+  background: rgba(56, 189, 248, 0.08);
+}
+.template-cursor-neumorphism.is-pressed .theme-cursor-ring {
+  width: 26px;
+  height: 26px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. Claymorphism Cursor Follower (Bouncy Puffy Bubble) */
+.template-cursor-claymorphism .theme-cursor-ring {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 107, 157, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.25),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.2),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.6);
+}
+.template-cursor-claymorphism.theme-cursor-light .theme-cursor-ring {
+  background: rgba(236, 72, 153, 0.16);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 8px 16px rgba(124, 58, 237, 0.15),
+    inset -3px -3px 6px rgba(221, 214, 254, 0.6),
+    inset 3px 3px 6px #ffffff;
+}
+.template-cursor-claymorphism.is-hovering .theme-cursor-ring {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 107, 157, 0.28);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.template-cursor-claymorphism.is-pressed .theme-cursor-ring {
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%) scale(0.92);
+}
+
+/* 3. Neo-Brutalism Cursor Follower (Sharp Offset Square) */
+.template-cursor-neobrutalism .theme-cursor-ring {
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: transparent;
+  border: 2.5px solid var(--text-color);
+  box-shadow: 4px 4px 0px var(--highlight-color);
+}
+.template-cursor-neobrutalism.theme-cursor-light .theme-cursor-ring {
+  border: 2.5px solid #09090b;
+  box-shadow: 4px 4px 0px #09090b;
+}
+.template-cursor-neobrutalism.is-hovering .theme-cursor-ring {
+  width: 42px;
+  height: 42px;
+  background: var(--highlight-color);
+  opacity: 0.85;
+  box-shadow: 6px 6px 0px var(--card-border);
+  transform: translate(-50%, -50%) rotate(4deg);
+}
+.template-cursor-neobrutalism.is-pressed .theme-cursor-ring {
+  width: 24px;
+  height: 24px;
+  box-shadow: 2px 2px 0px var(--card-border);
+  transform: translate(-50%, -50%) translate(2px, 2px);
+}
+
+/* 4. Retro Y2K Cursor Follower (Cyber Targeting Reticle) */
+.template-cursor-y2k .theme-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 0;
+  background: transparent;
+  border: 1px dashed var(--highlight-color);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+}
+.template-cursor-y2k.theme-cursor-light .theme-cursor-ring {
+  border: 1px dashed #000080;
+  box-shadow: 2px 2px 0 #000000;
+}
+.template-cursor-y2k.is-hovering .theme-cursor-ring {
+  width: 44px;
+  height: 44px;
+  border-style: solid;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 16px var(--accent-color);
+}
+.template-cursor-y2k.is-pressed .theme-cursor-ring {
+  width: 22px;
+  height: 22px;
+  background: var(--highlight-color);
+  opacity: 0.5;
+}
+
+/* 5. Liquid Glass Cursor Follower (Frosted Specular Halo) */
+.template-cursor-liquid-glass .theme-cursor-ring {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.template-cursor-liquid-glass.theme-cursor-light .theme-cursor-ring {
+  background: rgba(255, 255, 255, 0.45);
+  border-color: rgba(2, 132, 199, 0.45);
+  box-shadow:
+    0 0 20px rgba(2, 132, 199, 0.2),
+    inset 0 1px 0 #ffffff;
+}
+.template-cursor-liquid-glass.is-hovering .theme-cursor-ring {
+  width: 52px;
+  height: 52px;
+  border-color: var(--highlight-color);
+  box-shadow:
+    0 0 30px rgba(56, 189, 248, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.template-cursor-liquid-glass.is-pressed .theme-cursor-ring {
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* 6. Skeuomorphism Cursor Follower (Milled Brass Studio Reticle) */
+.template-cursor-skeuomorphism .theme-cursor-ring {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: 1.5px solid var(--highlight-color);
+  box-shadow:
+    0 0 10px rgba(245, 158, 11, 0.35),
+    inset 0 0 6px rgba(0, 0, 0, 0.6);
+}
+.template-cursor-skeuomorphism.theme-cursor-light .theme-cursor-ring {
+  border-color: #b45309;
+  box-shadow: 0 0 8px rgba(180, 83, 9, 0.3);
+}
+.template-cursor-skeuomorphism.is-hovering .theme-cursor-ring {
+  width: 46px;
+  height: 46px;
+  border-style: double;
+  border-width: 3px;
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+}
+.template-cursor-skeuomorphism.is-pressed .theme-cursor-ring {
+  width: 24px;
+  height: 24px;
+  background: rgba(245, 158, 11, 0.2);
 }

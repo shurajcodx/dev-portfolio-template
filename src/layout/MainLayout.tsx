@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import TemplateSwitcher from '../components/TemplateSwitcher';
 import SEO from '../components/SEO';
+import CustomCursor from '../components/CustomCursor';
 import { useTemplate } from '../context/TemplateContext';
 
 const MainLayout: FC = () => {
@@ -12,6 +13,7 @@ const MainLayout: FC = () => {
     return (
         <div className={`app-shell template-${template}`}>
             <SEO />
+            <CustomCursor />
             {/* Ambient Template Atmosphere Layer */}
             <div className="ambient-canvas" aria-hidden="true">
                 <div className="ambient-orb orb-1" />
