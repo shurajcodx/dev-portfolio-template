@@ -13,24 +13,24 @@ const ROUTES_TO_EMIT: RouteMeta[] = [
     route: '/about',
     fileName: 'about/index.html',
     title:
-      'About Suraj Rai (Shuraj Shampang) — 8+ Years Experience, Skills & Architecture | Tech Lead',
+      'About Suraj Rai — Best Software Developer & Top Rated Engineer in Nepal | 8+ Yrs Experience',
     description:
-      'Explore the career and technical expertise of Suraj Rai (Shuraj Shampang): 8+ years at Dzango Technologies leading architecture across React, TypeScript, Node.js, Fastify, Spring Boot, Symfony, Elasticsearch, AI/MCP pipelines, and AWS/Docker.',
+      'Explore the career and architecture expertise of Suraj Rai, top rated software developer and tech lead in Nepal: 8+ years leading full-stack engineering across React, Node.js, Fastify, Spring Boot, AI/MCP pipelines, and AWS/Docker.',
   },
   {
     route: '/projects',
     fileName: 'projects/index.html',
     title:
-      'Selected & Open-Source Projects by Suraj Rai (Shuraj Shampang) — 12Deg, Bimbo, Embleema & EncoraDB',
+      'Selected Projects by Suraj Rai — Top Rated Software Engineer in Nepal | 12Deg, Bimbo & EncoraDB',
     description:
-      'Explore flagship production platforms (12Deg PaaS, Bimbo AI DAM, Embleema HL7 FHIR, Airwaybill Logistics) and open-source libraries (EncoraDB, JSONDebugger) engineered by Suraj Rai (Shuraj Shampang).',
+      'Explore flagship production platforms (12Deg PaaS, Bimbo AI DAM, Embleema HL7 FHIR) and open-source tools engineered by Suraj Rai, top rated software engineer in Nepal.',
   },
   {
     route: '/contact',
     fileName: 'contact/index.html',
-    title: 'Contact Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead',
+    title: 'Hire Suraj Rai — Top Rated Software Engineer & Best Tech Lead in Nepal',
     description:
-      'Get in touch with Suraj Rai (Shuraj Shampang) in Chitwan, Nepal for Senior Full-Stack Engineer / Tech Lead roles, system architecture consulting, or open-source collaboration.',
+      'Get in touch with Suraj Rai in Chitwan, Nepal for Senior Full-Stack Engineer / Tech Lead roles, high-scale system architecture consulting, or open-source collaboration.',
   },
 ];
 

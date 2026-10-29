@@ -46,8 +46,10 @@ const AboutPage: FC = () => {
     return (
         <div className="main-content">
             <section className="about-intro surface-card">
-                <span className="section-eyebrow">// 01. EXECUTIVE PROFILE</span>
-                <h1>About Me</h1>
+                <span className="section-eyebrow">
+                    // 01. TOP-RATED SOFTWARE ENGINEER &amp; TECH LEAD IN NEPAL
+                </span>
+                <h1>About Suraj Rai</h1>
                 <div className="about-bio">
                     <p>{personalInfo.bio}</p>
                 </div>

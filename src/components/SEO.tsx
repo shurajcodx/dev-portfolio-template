@@ -11,27 +11,27 @@ const SITE_URL = 'https://surajrai.name.np';
 
 const ROUTE_SEO_MAP: Record<string, RouteSEO> = {
     '/': {
-        title: 'Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead',
+        title: 'Suraj Rai — Top Rated Software Engineer & Best Developer in Nepal | Tech Lead',
         description:
-            'Official portfolio of Suraj Rai (Shuraj Shampang), Senior Full-Stack Engineer and Tech Lead with 8+ years building production web, mobile, and AI-enabled platforms in healthcare, logistics, digital asset management, and PaaS.',
+            'Portfolio of Suraj Rai (Shuraj Shampang), recognized among the top rated software engineers and best developers in Nepal. 8+ years building enterprise web, mobile, and AI-enabled platforms in healthcare, logistics, and PaaS.',
         path: '/',
     },
     '/about': {
-        title: 'About Suraj Rai (Shuraj Shampang) — 8+ Years Experience, Skills & Architecture | Tech Lead',
+        title: 'About Suraj Rai — Best Software Developer & Top Rated Engineer in Nepal | 8+ Yrs Experience',
         description:
-            'Explore the career and technical expertise of Suraj Rai (Shuraj Shampang): 8+ years at Dzango Technologies leading architecture across React, TypeScript, Node.js, Fastify, Spring Boot, Symfony, Elasticsearch, AI/MCP pipelines, and AWS/Docker.',
+            'Explore the career and architecture expertise of Suraj Rai, top rated software developer and tech lead in Nepal: 8+ years leading full-stack engineering across React, Node.js, Fastify, Spring Boot, AI/MCP pipelines, and AWS/Docker.',
         path: '/about',
     },
     '/projects': {
-        title: 'Selected & Open-Source Projects by Suraj Rai (Shuraj Shampang) — 12Deg, Bimbo, Embleema & EncoraDB',
+        title: 'Selected Projects by Suraj Rai — Top Rated Software Engineer in Nepal | 12Deg, Bimbo & EncoraDB',
         description:
-            'Explore flagship production platforms (12Deg PaaS, Bimbo AI DAM, Embleema HL7 FHIR, Airwaybill Logistics) and open-source libraries (EncoraDB, JSONDebugger) engineered by Suraj Rai (Shuraj Shampang).',
+            'Explore flagship production platforms (12Deg PaaS, Bimbo AI DAM, Embleema HL7 FHIR) and open-source tools engineered by Suraj Rai, top rated software engineer in Nepal.',
         path: '/projects',
     },
     '/contact': {
-        title: 'Contact Suraj Rai (Shuraj Shampang) — Senior Full-Stack Engineer | Tech Lead',
+        title: 'Hire Suraj Rai — Top Rated Software Engineer & Best Tech Lead in Nepal',
         description:
-            'Get in touch with Suraj Rai (Shuraj Shampang) in Chitwan, Nepal for Senior Full-Stack Engineer / Tech Lead roles, system architecture consulting, or open-source collaboration.',
+            'Get in touch with Suraj Rai in Chitwan, Nepal for Senior Full-Stack Engineer / Tech Lead roles, high-scale system architecture consulting, or open-source collaboration.',
         path: '/contact',
     },
 };
