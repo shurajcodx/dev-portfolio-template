@@ -38,6 +38,18 @@ const TemplateContext = createContext<TemplateContextValue | undefined>(undefine
 function getInitialTemplate(): TemplateId {
     if (typeof window === 'undefined') return themeConfig.defaultTemplate;
 
+    // 1. Direct URL query parameter (?template=claymorphism)
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const queryTpl = params.get('template') as TemplateId | null;
+        if (queryTpl && VALID_TEMPLATES.includes(queryTpl)) {
+            localStorage.setItem('portfolio_template', queryTpl);
+            return queryTpl;
+        }
+    } catch {
+        // ignore in non-browser envs
+    }
+
     const saved = localStorage.getItem('portfolio_template') as TemplateId | null;
 
     if (themeConfig.rotateTemplateOnRefresh !== false) {
@@ -59,6 +71,19 @@ function getInitialTemplate(): TemplateId {
 
 function getInitialTheme(): Theme {
     if (typeof window === 'undefined') return themeConfig.defaultTheme;
+
+    // 1. Direct URL query parameter (?theme=light)
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const queryTheme = params.get('theme') as Theme | null;
+        if (queryTheme === 'light' || queryTheme === 'dark') {
+            localStorage.setItem('theme', queryTheme);
+            return queryTheme;
+        }
+    } catch {
+        // ignore
+    }
+
     const saved = localStorage.getItem('theme') as Theme | null;
     if (saved === 'light' || saved === 'dark') {
         return saved;
